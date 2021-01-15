@@ -1,2 +1,13 @@
-<h1>Character#new</h1>
-<p>Find me in app/views/character/new.html.erb</p>
+<h1>Create your Adventurer</h1>
+
+<%= form_for (@character) do |f| %>
+
+<%= f.label :race %>
+<%= f.text_field :race %>
+
+<%
+=begin%>
+ <%= f.hidden_field :user_id %><br/> 
+<%
+=end%>
+<% end %>
