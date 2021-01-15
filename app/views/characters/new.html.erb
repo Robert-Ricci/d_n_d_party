@@ -2,12 +2,23 @@
 
 <%= form_for (@character) do |f| %>
 
-<%= f.label :race %>
-<%= f.text_field :race %>
+<%= f.label :name %>
+<%= f.text_field :name %><br/>
 
-<%
-=begin%>
- <%= f.hidden_field :user_id %><br/> 
-<%
-=end%>
+<br/>
+<br/>
+
+<%= f.label :race %>
+<%= f.text_field :race %><br/>
+
+<br/>
+<br/>
+
+<%= f.label :klass, "Class" %>
+<%= f.text_field :klass %><br/>
+
+<br/>
+<br/>
+
+<%= f.submit %>
 <% end %>
