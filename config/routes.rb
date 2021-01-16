@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   end
 
   resources :characters
+
+  get 'signin' => 'sessions#new'
+  post 'signin' => 'sessions#create'
+  delete '/session/', to: 'sessions#destroy'
 end
