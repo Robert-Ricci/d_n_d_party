@@ -5,20 +5,26 @@ class CharactersController < ApplicationController
   end
 
   def create
+    if current_user
     @character = Character.create(character_params)
-    # binding.pry
-    @character.user_is = current_user.id
+    binding.pry
+    @character.user_id = current_user.id
     if @character.save
-     
       redirect_to user_characters_path(@character)
     else 
       render 'new'
     end
   end
+  end
 
   def index
     @characters = Character.all
   end
+
+  def show
+    @character = Character.find_by(id: params[:id])
+  end
+
 
   private
 
