@@ -7,7 +7,7 @@ class CharactersController < ApplicationController
   def create
     if current_user
     @character = Character.create(character_params)
-    binding.pry
+    # binding.pry
     @character.user_id = current_user.id
     if @character.save
       redirect_to user_characters_path(@character)
