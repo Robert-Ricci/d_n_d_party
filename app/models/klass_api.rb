@@ -1,0 +1,2 @@
+class KlassApi < ApplicationRecord
+end

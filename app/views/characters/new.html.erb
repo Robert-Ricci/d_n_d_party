@@ -9,7 +9,7 @@
 <br/>
 
 <%= f.label :race %>
-<%= f.text_field :race %><br/>
+<%= f.select :race, @race.map {|element| element.to_s.start_with?('b') } %><br/>
 
 <br/>
 <br/>
