@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_145157) do
+ActiveRecord::Schema.define(version: 2021_01_23_121853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
-    t.string "race"
     t.string "klass"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "race_name"
   end
 
   create_table "klass_apis", force: :cascade do |t|
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 2021_01_19_145157) do
   end
 
   create_table "race_apis", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -26,6 +26,9 @@ class RacesController < ApplicationController
   def create
     @race = Race.new(race_params)
 
+    hash = RaceApi.new
+    @race.name = hash.race_call(@race.name)
+
     respond_to do |format|
       if @race.save
         format.html { redirect_to @race, notice: 'Race was successfully created.' }
@@ -69,6 +72,6 @@ class RacesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def race_params
-      params.require(:race).permit(:name)
+      params.require(:race).permit(:name, :index)
     end
 end
