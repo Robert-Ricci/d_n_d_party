@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :races
   # get 'characters/new'
   # get 'characters/create'
   # get 'characters/show'
