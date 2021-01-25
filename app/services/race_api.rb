@@ -9,7 +9,7 @@ class RaceApi < ApplicationRecord
         # response.parsed_response
         parsed_response = JSON.parse(response)
 
-        parsed_response("name")
+        # parsed_response("name")
     end
 
     def race_info_call(input)

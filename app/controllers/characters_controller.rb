@@ -9,6 +9,10 @@ class CharactersController < ApplicationController
     @character = Character.create(character_params)
     # binding.pry
     @character.user_id = current_user.id
+
+    # hash = RaceApi.new
+    # @race.name = hash.race_call(@race.name)
+
     if @character.save
       redirect_to user_characters_path(@character)
     else 

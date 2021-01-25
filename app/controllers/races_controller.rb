@@ -26,18 +26,20 @@ class RacesController < ApplicationController
   def create
     @race = Race.new(race_params)
 
-    hash = RaceApi.new
-    @race.name = hash.race_call(@race.name)
+    response= Race.new.race_call
+    response["results"].each_with_index do |race| 
+      "#{race['name']}"
+  end
 
-    respond_to do |format|
-      if @race.save
-        format.html { redirect_to @race, notice: 'Race was successfully created.' }
-        format.json { render :show, status: :created, location: @race }
-      else
-        format.html { render :new }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @race.save
+    #     format.html { redirect_to @race, notice: 'Race was successfully created.' }
+    #     format.json { render :show, status: :created, location: @race }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @race.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /races/1

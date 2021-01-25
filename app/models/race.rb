@@ -7,6 +7,8 @@ class Race < ApplicationRecord
         # response.parsed_response
         parsed_response = JSON.parse(response)
 
-        parsed_response("name")
+        parsed_response["name"]
     end
+
+    
 end
