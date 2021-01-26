@@ -21,7 +21,7 @@
 <br/>
 
 <%= f.label :race %>
-<%= collection_select  :character, :race_name, Race.all, :id, :name  %><br/>
+<%= f.select(:race_name, options_for_select([['Dragonborn','Dragonborn'],['Dwarf','Dwarf'],['Human','Human'],['Elf','ELF'],['Half-Elf','Half-Elf'],['Halfling','Halfling']]))  %><br/>
 
 <br/>
 <br/>
@@ -34,3 +34,11 @@
 
 <%= f.submit %>
 <% end %>
+
+
+
+<%
+=begin%>
+ //  :character, :race_name, Race.all, :id, :name   
+<%
+=end%>
