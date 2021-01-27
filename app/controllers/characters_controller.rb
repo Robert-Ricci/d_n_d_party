@@ -10,8 +10,7 @@ class CharactersController < ApplicationController
     # binding.pry
     @character.user_id = current_user.id
 
-    hash = Race.new
-    @race = hash.race_call
+   
 
     if @character.save
       redirect_to user_characters_path(@character)
