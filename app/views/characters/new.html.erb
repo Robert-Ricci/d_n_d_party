@@ -13,27 +13,31 @@
 <h1>Create your Adventurer</h1>
 
 <%= form_for (@character) do |f| %>
+<div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control", placeholder:"Enter a name" %><br/>
+</div>
 
-<%= f.label :name %>
-<%= f.text_field :name %><br/>
+
+<div class="form-group">
+    
+    <%= f.label :race_name %><br/>
+    <%= f.select(:race_name, options_for_select([['Dragonborn','Dragonborn'],['Dwarf','Dwarf'],['Human','Human'],['Elf','ELF'],['Half-Elf','Half-Elf'],['Halfling','Halfling']])) %><br/>
+
+</div>
+<br/>
+<br/>
+<div class="form-group">
+    <%= f.label :klass, "Class" %><br/>
+    <%= f.select(:klass, options_for_select([['Fighter','Fighter'],['Ranger','Ranger'],['Rogue','Rogue'],['Wizard','Wizard'],['Bard','Bard'],['Barbarian','Barbarian']]))  %><br/>
+</div>
 
 <br/>
 <br/>
 
-<%= f.label :race_name %>
-<%= f.select(:race_name, options_for_select([['Dragonborn','Dragonborn'],['Dwarf','Dwarf'],['Human','Human'],['Elf','ELF'],['Half-Elf','Half-Elf'],['Halfling','Halfling']]))  %><br/>
-
-<br/>
-<br/>
-
-<%= f.label :klass, "Class" %>
-<%= f.select(:klass, options_for_select([['Fighter','Fighter'],['Ranger','Ranger'],['Rogue','Rogue'],['Wizard','Wizard'],['Bard','Bard'],['Barbarian','Barbarian']]))  %><br/>
-
-
-<br/>
-<br/>
-
-<%= f.submit %>
+<div class="actions">
+    <%= f.submit "Create Character", class:"btn btn-primary" %>
+</div>
 <% end %>
 
 
