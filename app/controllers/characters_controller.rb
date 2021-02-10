@@ -30,7 +30,7 @@ class CharactersController < ApplicationController
 
   def destroy
     Character.find(params[:id]).destroy
-    redirect_to characetrs_url
+    redirect_to characters_url
   end
 
   private
