@@ -17,19 +17,26 @@
 
 <%= form_for (@user) do |f| %>
 
-<%= f.label :username %>
-<%= f.text_field :username %><br/>
+<div class="form-group">
+    <%= f.label :username %>
+    <%= f.text_field :username, class:"form-control", placeholder:"Username" %>
+</div>
 
 
-<%= f.label :email %>
-<%= f.text_field :email %><br/>
+<div class="form-group">
+  <%= f.label :email %>
+  <%= f.text_field :email, class:"form-control", placeholder:"Email" %><br/>
+</div>
+
+<div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
+</div>
 
 
-<%= f.label :password %>
-<%= f.password_field :password %><br/>
-
-
-<%= f.submit %>
+<div class="actions">
+    <%= f.submit "Sign Up", class:"btn btn-primary" %>
+</div>
 
 
 <% end %>
