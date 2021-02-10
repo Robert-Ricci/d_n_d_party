@@ -3,3 +3,5 @@
 
 <h2>Race:<%= @character.race_name %></h2>
 <h2>Class:<%= @character.klass %></h2>
+
+<%= button_to "Delete Character", character_path(@character), method: :delete %>

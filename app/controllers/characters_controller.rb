@@ -28,6 +28,10 @@ class CharactersController < ApplicationController
     @character = Character.find_by(id: params[:id])
   end
 
+  def destroy
+    Character.find(params[:id]).destroy
+    redirect_to character_url
+  end
 
   private
 
