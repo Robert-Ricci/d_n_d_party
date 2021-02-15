@@ -15,7 +15,7 @@
 <h2> Welcome, sign up to start playing<h2>
 
 
-<%= form_for (@user) do |f| %>
+<%= form_for :user do |f| %>
 
 <div class="form-group">
     <%= f.label :username %>
@@ -25,7 +25,7 @@
 
 <div class="form-group">
   <%= f.label :email %>
-  <%= f.text_field :email, class:"form-control", placeholder:"Email" %><br/>
+  <%= f.text_field :email, class:"form-control", placeholder:"Email" %> 
 </div>
 
 <div class="form-group">
